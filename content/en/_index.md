@@ -138,3 +138,186 @@ message, but the `&pf=1` limits the twitter search to only people you follow.
 [#asknostr](https://nosey.vercel.app/?q=%23asknostr) hashtag in a note from any client.
 
 ---
+
+# Learn More
+
+nostr's design is very basic:
+
+- There are two components: **clients** and **relays**. Each user runs a client. Anyone can run a relay.
+- Every user is identified by a public key. Every post is signed. Every client validates these signatures.
+- Clients fetch data from relays of their choice and publish data to other relays of their choice. A relay doesn't talk to another relay, only directly to users.
+
+To use nostr, you need a [key](#keys) and a [client](#clients).
+
+- Everybody runs a client. It can be a native client, a web client, etc.
+- To publish something, you write a post, sign it with your key and send it to multiple relays (servers hosted by someone else, or yourself).
+- To get updates from other people, you ask multiple relays if they know anything about these other people.
+- Anyone can run a relay. A relay is very simple. It does nothing besides accepting posts from some people and forwarding to others.
+- Relays don't have to be trusted. Signatures are verified on the client side.
+
+## Keys
+
+Your keys are your identity. You can think of your public key (`npub...`) as
+your username and your private key (`nsec...`) as your password.
+
+Two quick things:
+
+- ⚠️ **DO NOT PASTE YOUR PRIVATE KEY INTO WEBSITES**[^fn-xss] ⚠️
+- Store your keys securely and do not share your private key
+
+
+Keys exist in two formats, `hex` and the above mentioned npub/nsec. You can use
+a [key converter tool](https://github.com/rot13maxi/key-convertr)[^fn-keys] to
+convert between the two formats.
+
+[^fn-keys]: There's also the [damus.io/key](https://damus.io/key/) but DO NOT use it for private key conversions. Don't paste your private key into websites. Just don't.
+
+[^fn-xss]: You have to trust whoever is running the website, obviously, and some clients are vulnerable to XSS attacks. A lot of people got rekt already, and had to re-build their nostr identity because of it.
+
+Use [Alby](https://getalby.com) or [nos2x](https://github.com/fiatjaf/nos2x) to
+generate your keys, or generate them using a dedicated tool like
+[rana](https://github.com/grunch/rana). The aforementioned extensions will
+store your keys safely (or at least more safely). Check out [this list](https://spatianostra.com/a-simple-list-of-nostr-signers/) for a sampling of key management tools.
+
+- [Nostr in the Alby Extension](https://blog.getalby.com/nostr-in-the-alby-extension/)
+- [The nos2x browser extension and why you should use it](https://youtu.be/IoLw-3ok3_M)
+
+If you're on mobile, it is recommended to use a native signer like [Amber] on Android or
+[Nostash] on iOS.
+
+[Amber]: https://github.com/greenart7c3/Amber?tab=readme-ov-file#download-and-install
+[Nostash]: https://apps.apple.com/us/app/nostash/id6744309333
+
+You can also generate your keys by other means if you know what you're doing.[^bip85]
+It's still early days, so be prepared to get rekt.
+
+[^bip85]: [BIP-85](https://bip85.com/) is an option, for example.
+
+## Clients
+
+Periodically check [nostr.net](https://www.nostr.net/) which keeps a curated
+list of clients or have a look at the [client comparison table](https://github.com/vishalxl/Nostr-Clients-Features-List).
+
+Mobile clients:
+
+- [Damus (iOS & Android)](https://damus.io/) - Twitter-style iOS/Android client, also works on MacOS[^fn-mac]
+- [Amethyst (Android)](https://www.amethyst.social/) - Twitter-style Android client
+- [Flotilla (Android)](https://play.google.com/store/apps/details?id=social.flotilla&hl=en_US) - DMs and group chats
+- [Nostur (iOS)](https://apps.apple.com/us/app/nostur/id1672780508) - native iOS/iPad client with MacOS[^fn-mac] version
+- [Openvibe (iOS & Android)](https://play.google.com/store/apps/details?id=com.plebstr.client) - Nostr, Threads, Bluesky, and Mastodon in one client.
+- [Primal (iOS & Android)](https://primal.net/downloads) - Clean & performant, but not very feature-rich (yet)
+- [Yakihonne (iOS & Android)](https://yakihonne.com/yakihonne-mobile-app) - Cross-platform Nostr client
+
+There are more native clients in development, Nostros[^nostros] and Voyage[^voyage] being two of them.
+
+[Nootti](https://nootti.com) is the first iOS native cross-posting client for Nostr, Bluesky and Mastodon. [Nos](https://nos.social/) is another iOS client that integrates with other social protocols.
+
+Web clients:
+
+- [primal.net](https://primal.net/) - Explore your tribe, network, and global trends
+- [phoenix.social](https://phoenix.social/) - Simple interface with automatic image-upload
+- [phoenix.deck](https://phoenix.social/deck) - A tweetdeck like version of the snort client.
+- [noStrudel](https://nostrudel.ninja/) - Supports many NIPs inc communities, streams, blogs and more
+- [coracle.social](https://coracle.social/) - Search, filters, and micro-apps
+- [jumble](https://jumble.social/) - Explore content feeds by relay and create custom relay sets
+- [iris.to](https://iris.to/) - Clean interface & rich in features
+- [x21](https://x21.social/) - Clean interface
+- [nostria](https://nostria.app/) - Explore relay feeds, topics, music, and more
+- [grimoire](https://grimoire.rocks/) - A nostr client for magicians
+
+On Android you can use the [Kiwi Browser](https://kiwibrowser.com/) to use the
+[Alby](https://getalby.com) or [nos2x](https://github.com/fiatjaf/nos2x)
+extension, which allows you to use any web client.
+
+[^nostros]: [KoalaSat/nostros](https://github.com/KoalaSat/nostros)
+[^voyage]: [dluvian/Voyage](https://github.com/dluvian/voyage)
+
+There's also [Nostr Console](https://github.com/vishalxl/nostr_console),
+[algia](https://github.com/mattn/algia), and
+[nostr-commander](https://github.com/8go/nostr-commander-rs) if you're into CLI
+stuff.
+
+[^fn-mac]: Apple Silicone only (M1 or M2 chip)
+
+Web clients for content creators:
+
+- [ZapStream](https://zap.stream/) - Streaming on nostr allows for instant monetarisation of content.
+- [Habla](https://habla.news/) and [yakihonne](https://yakihonne.com/) - Long-form posts on nostr similar to Medium.
+- [Highlighter](https://highlighter.com/) - Client focused on reading and highlighting long-form content.
+- [Shipyard](https://shipyard.pub/) - Write, schedule, and boost your notes.
+- [Wavlake](https://www.wavlake.com/) - A music platform similar to Spotify.
+- [Satellite.earth](https://satellite.earth/) - Focuses on reddit-like reading experience but also offers CDN media hosting and other nostr services.
+- [Npub.pro](https://npub.pro/) - Nostr-based websites to show case creator content.
+- [Pidgeon](https://pidgeon.lol/) - Compose and schedule notes.
+
+Desktop clients:
+
+- [Gossip](https://github.com/mikedilger/gossip) - Advanced, privacy-conscious Nostr desktop client with multi-relay support, secure key handling, and extensive moderation and customization options
+- [Notedeck](https://damus.io/notedeck/) - Lightning fast, native, multi-account Nostr client for desktop (by Damus team)
+- [more-speech](https://github.com/unclebob/more-speech) - Powerful Clojure-based Nostr client for desktop, focused on robust content moderation, curation, and advanced relay management
+
+## Relays
+
+Relays are simple servers that you can leave behind at any time ([so they can't
+turn evil](https://youtu.be/5FbgDUQjziM)). You need to connect your client to a relay for it to work. There are
+many relays & you can run your own. Check out [this video](https://youtu.be/TFH7Xr0cJ0w) for a quick tutorial on managing relays.
+
+- [nostr.watch](http://nostr.watch/) - directory of paid and free relays
+- [nostr.info](https://nostr.info/relays/) directory of known nostr relays
+- [relay.tools](https://relay.tools/) - public relay browser
+
+Run your own:
+
+- [Set up a Nostr Relay server in under 5 minutes](https://andreneves.xyz/p/set-up-a-nostr-relay-server-in-under)[^fn-fork]
+- Run a native, personal relay on Android with [Citrine](https://github.com/greenart7c3/Citrine?tab=readme-ov-file#download)
+- Install [nostr-relay-tray](https://github.com/CodyTseng/nostr-relay-tray/releases) for a simple, local relay on your desktop.
+- Easily host a powerful community relay with many features, on a cheap VPS with [Pyramid](https://github.com/fiatjaf/pyramid)
+
+Paid relays:
+
+Paid relays effectively deal with spam by charging users a small usage fee in
+sats. You can set your global feed to paid relays only, which will get rid of
+almost all spam.
+
+[^fn-fork]: Fork with small modifications/fixes: [Install a nostr relay](https://www.massmux.com/install-a-nostr-relay/)
+
+Unique relays:
+
+Relays can also act as [content curators](https://youtu.be/CL34LnBs0OQ), unlock different ways of interacting, be the home of communities or groups, and more.
+See an example of a human-curated feed [here](https://jumble.social/?r=relays.land/spatianostra).
+
+## Tools
+
+Managing your nostr keys AND your profile is as essential as backing up your private keys for Bitcoin!
+
+- [Nostr Metadata](https://metadata.nostr.com/) - a profile and following list backup tool.
+- [NostrSync](https://nostrsync.vercel.app/) - another service to backup profile AND nostr events.
+- [Nostr Follows](https://follows.nostr.com/) - recover lost contacts/follows.
+- [Nostr Delete](https://delete.nostr.com/) - request to delete any nostr event from its hosting relays.
+
+nostr can do more than just social media.
+
+- [Asknostr](https://asknostr.site) - Q&A platform (alternative to Quora/StackOverflow)
+- [Listr](https://listr.lol/) - create and manage lists to use in supporting nostr apps.
+- [nosbin](https://nosbin.com/) - pastebin over nostr.
+- [Zap.Cooking](https://zap.cooking/) - create, explore or share recipes.
+- [Badges](https://nostrsigil.com) - create badges and award them to your friends or followers.
+- [Emojis](https://emojito.meme/) - create or use emoji packs supported on most nostr clients.
+- [Pinja](https://www.yumyu.me/) - pin urls as bookmarks.
+- [Lantern](https://chromewebstore.google.com/detail/lantern/jjoijlenmgefkaeiomoaelcljfibpcgh) - highlight, annotate, and discuss anything on the web.
+- [Formstr](https://formstr.app/dashboard) - create custom or template forms that are accessible anywhere.
+- [Gitworkshop](https://gitworkshop.dev/) - code collaboration over nostr.
+- [Plektos](https://plektos.app/) - meetup and event calendar.
+- [Wikifreedia](https://wikifreedia.xyz/) - wikis on nostr, filtered by your web of trust. Or not.
+- [Boris](https://read.withboris.com/) - a full reader app, with a focus on local, offline reading and sharing highlights.
+
+## Games
+
+Games? WTF? Yes, games:
+
+- [Jester](https://jesterui.github.io/) - Chess over nostr by theborakompanioni
+- [Flappy Nostrich](https://flappy-nostrich.vercel.app/) - Navigate bitcoin price talk to find good content by [Ryan](nostr:npub1m64hnkh6rs47fd9x6wk2zdtmdj4qkazt734d22d94ery9zzhne5qw9uaks)
+- [Word5](https://word5.otherstuff.ai/) - Just like Wordle, but on nostr
+- [Puzzl35](https://puzzl35.com/) - Turn your photos and art into puzzles to share with your friends
+
+---
