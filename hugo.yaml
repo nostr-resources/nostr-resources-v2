@@ -1,0 +1,54 @@
+baseURL: https://nostr-resources.com/
+title: nostr Resources
+languageCode: en
+
+defaultContentLanguage: en
+defaultContentLanguageInSubdir: false
+
+languages:
+  en:
+    languageName: English
+    weight: 1
+    title: nostr Resources
+    params:
+      description: "nostr is the simplest open protocol for censorship-resistant communication."
+  de:
+    languageName: Deutsch
+    weight: 2
+    title: nostr Ressourcen
+    params:
+      description: "nostr ist das einfachste offene Protokoll für zensurresistente Kommunikation."
+
+params:
+  author: Gigi
+  defaultImage: /images/avatar.png
+  ogImage: /images/cover.png
+  twitterUsername: dergigi
+  fathomSiteId: UWNPYCXS
+  social:
+    - name: nostr
+      url: "nostr:npub166qthqk9lghgpjy8zkxxuwud5n6rtkv7kacsm2ku5w6gfgrruwvq83qv5j"
+    - name: github
+      url: https://github.com/nostr-resources/nostr-resources-v2
+    - name: bitcoin
+      url: https://dergigi.com/support
+
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+    parser:
+      autoHeadingIDType: github
+    extensions:
+      footnote: true
+
+enableRobotsTXT: true
+
+outputs:
+  home:
+    - HTML
+    - RSS
+
+sitemap:
+  changeFreq: weekly
+  priority: 0.5
