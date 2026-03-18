@@ -434,4 +434,179 @@ There is even a [redirect tool](https://nostredirect.davidcoen.it/) that you can
 
 [^fn-quotenote]: How's that for a tongue twister?
 
+## Stats
+
+When [Jack](https://twitter.com/jack/status/1603945963944480768) joined
+(and funded some nostr devs), general interest in nostr took off and has been growing since. Accurate statistics are a tricky thing to capture on a
+decentralized protocol but here are some good examples:
+
+- [npub.world](https://npub.world/stats)
+- [nostr stats](https://stats.andotherstuff.org/)
+- [nashboard.space](https://nashboard.space/)
+
+## Sats
+
+Some clients will render Lightning invoices natively, showing the recipient,
+amount, and a pay button. One such client is Damus, which shows a nice
+[little widget and a pay button](https://i.ibb.co/zhd4Fbs/damus-invoice-render.png).
+
+## Search
+
+Most clients support basic search, but there's also:
+
+- [ants🐜](https://ants.sh/)
+- [nos.today](https://nos.today)
+- [npub.world](https://npub.world/)
+- [nosey](https://nosey.vercel.app/)
+
+Some DVMs, like [Noogle](https://noogle.lol/), have search capabilities, as well.
+
+### Bots
+
+- [How to build a nostr gm bot](https://dergigi.com/2023/01/19/how-to-build-a-nostr-gm-bot/) by [Gigi](https://njump.me/dergigi.com)
+- [nostr_bot](https://docs.rs/nostr-bot/latest/nostr_bot/) Rust crate
+- [nostr GPT bot](https://github.com/Marfusios/nostr-client/tree/master/apps/nostr-bot) A GPT 3.5 bot for nostr.
+
+### RSS
+
+You can also create an RSS feed on nostr by following [this guide](https://habla.news/a/naddr1qvzqqqr4gupzp89qh469qapddgsrr8qw84xx08y7q34fm3cw3m64c2g9ufq9ydqtqyghwumn8ghj7mn0wd68ytnhd9hx2tcqzpkngat8w4nhzve3ve6k2d3hvyus88uu4f) .
+[Narr](https://github.com/fiatjaf/narr) is a web-based nostr feed aggregator and RSS reader.
+There is [Noflux](https://github.com/fiatjaf/noflux), too.
+
+You can automatically generate a Podcast feed from any npub using [castr.me](http://castr.me/).
+
+## Books
+
+- [Building Nostr](https://building-nostr.coracle.social/) by hodlbod - A guide for developers building on the decentralized social protocol
+
+## Podcasts
+
+- [Nostr Compass](https://podcast.nostrcompass.org/) - weekly interviews with nostr developers
+- [nostrovia](https://nostrovia.org/) - nostr news roundup
+- [La Cosa Nostr](https://tunein.com/podcasts/Technology-Podcasts/La-Cosa-Nostr---The-Decentralized-Network-p3709902/?topicId=355452728) - interviews with relay operators and builders
+- [Nostr Talks](https://www.curiousdk.com/podcast) - Nostr related news and interviews
+- [Thank God For Nostr](https://podcasts.apple.com/us/podcast/thank-god-for-nostr/id1694064646) - nostr from a Christian perspective
+- [No Solutions](https://fountain.fm/show/1jdehAGo1tgBdKZXIo8K) - No solutions; only trade-offs. Walking towards a better internet.
+- [Nostr Rising](https://bitcoin.review/nostr/) - a [Bitcoin.Review](https://bitcoin.review/) series
+- [Bitcoin And...](https://fountain.fm/show/eK5XaSb3UaLRavU3lYrI) - It's the news you can use
+- [Plebchain Radio](https://fountain.fm/show/0N6GGdZuYNNG7ysagCg9) - weekly live audio show made for plebs, by plebs
+
+Episodes:
+
+- [BR018](https://bitcoin.review/podcast/episode-18/) - jack, fiatjaf, and jb55 talk nostr with nvk ([transcript](https://archive.is/wip/Qoh4M), [archive](https://archive.is/wip/dkQj2))
+- [Lightning Tidbits 769571](https://pod.link/1586346643/episode/33f509c2a1990640334b48739c59e31f) - fiatjaf talks nostr with André Neves
+- [CD63 - building nostr](https://pod.link/1546393840/episode/112bd2a52d54e203ec0c11022b5aaf11), a censorship resistant alternative to twitter, with fiatjaf, jb55, and kukks, hosted by ODELL ([transcript](https://archive.is/wip/Qoh4M), [archive](https://archive.ph/Qoh4M))
+- [BA691 - A Native Protocol for Social Media](https://pod.link/1359544516/episode/8e647d338c79265bed63dfb06dd71e7b) by jack
+- [BTC111 - Decentralized Social Media & Bitcoin](https://www.theinvestorspodcast.com/bitcoin-fundamentals/nostr-decentralized-social-media-william-casarin/) with jb55 hosted by Preston Pysh ([transcript](https://chowcollection.medium.com/preston-pysh-btc111-nostr-decentralized-social-media-bitcoin-w-william-casarin-352f6dedce46), [archive](https://archive.ph/uCSDQ))
+- [What's new with Stacker.News and Nostr?](https://www.curiousdk.com/p/whats-new-with-stackernews-and-nostr) a conversation with Keyan Kousha and Max Webster ([transcript](https://chowcollection.medium.com/david-king-whats-new-with-stacker-news-e49e3256eddc), [archive](https://archive.is/wip/wGrb8))
+- [BAChat-83 - Decentralizing Global Markets with Nostr](https://play.pocketcasts.com/podcasts/d44c81b0-10eb-0136-c266-7d73a919276a/7f0a34a8-e0b3-4c13-8538-a9a863c644ce), with PABLOF7z ([archive](https://archive.is/C3xHd))
+- [The pro-hashed podcast, episode 22](https://youtu.be/wiDNJPKWRmQ), a conversation between Constant and fiatjaf
+
+---
+
+## Privacy
+
+There are multiple [privacy issues](https://consentonchain.github.io/blog/posts/nostr-privacy/) when it
+comes to using nostr.
+
+Your IP address is exposed to the relays you connect to, so consider using a VPN
+or similar. Some clients also support connecting via Tor.
+Tor nostr relays exist, but not all clients support Tor nostr relays.
+
+Relays also know which public keys you are requesting, meaning your public key
+will be tied to your IP address.
+
+### Privacy & Image Uploads
+
+Some third party media hosters may be able to see, and share your IP address.
+
+### Privacy & Direct Messages
+
+Only the message content is encrypted on Nostr: the sender, recipient and timestamp are visible to everyone. There are a few approaches currently underway to improve this. To best understand how your direct messages are handled, check with your favorite message client developer.
+
+For truly secure and private messaging, check out [White Noise](https://www.whitenoise.chat/), a decentralized messenger built on Nostr that provides end-to-end encryption with forward secrecy and post-compromise security.
+
+---
+
+## More info
+
+- [nostr.how](https://nostr.how/) by Jeff G.
+- [usenostr.org](https://usenostr.org/) by Pluja
+- [nostr.net](https://www.nostr.net/) aka awesome-nostr by Aljaz
+- [nostr-protocol/nostr](https://github.com/nostr-protocol/nostr) by fiatjaf
+- [nostr.org](https://nostr.org/) by elidy
+- [whynostr.com](https://www.whynostr.com/) by zach
+
+Articles and explainers:
+
+- [Can Nostr Make Twitter's Dreams Come True?](https://reason.com/2024/08/13/can-nostr-make-twitters-dreams-come-true/) by Alex Gladstein
+- [The Power of Nostr: Decentralized Social Media and More](https://www.lynalden.com/the-power-of-nostr/) by Lyn Alden
+- [Implications of Open Monetary and Information Networks](https://www.lynalden.com/open-networks/) by Lyn Alden
+- [What Is Nostr and How Do I Use It?](https://www.btctimes.com/news/what-is-nostr-and-how-do-i-use-it) by Walker V.
+- [What is Nostr, and how to start using Nostr](https://github.com/vishalxl/nostr_console/discussions/31) by Vishal
+- [Nostr, an Introduction](https://wiki.wellorder.net/post/nostr-intro/) by Greg Heartsfield
+- [Nostr Newcomers Most Common Questions and Answers](https://uselessshit.co/resources/nostr/) by pitiunited
+- [Why Nostr Matters](https://blog.lopp.net/why-nostr-matters/) by Jameson Lopp
+
+Videos:
+
+- [How To Use NOSTR](https://youtu.be/qn-Zp491t4Y) by BTC Sessions
+- [Social Media is broken. Can we fix it?](https://youtu.be/aA-jiiepOrE) by Max DeMarco
+- [Nostr - FOSDEM 2025](https://youtu.be/Tbt3jL1Ms0w) by Wouter Constant
+- [Nostr: the decentralized future of social media?](https://www.youtube.com/live/pi2JbHWd_BM?si=u6NcQk86B3zSAQXe) by ReasonTV with Will Casarin
+
+For conference videos have a look at the [nostr world](https://www.youtube.com/@nostrworld) channel.
+
+---
+
+# Get Involved
+
+nostr is an open protocol and most clients are open-source.
+You are encouraged to report bugs and create pull requests!
+
+nostr protocol:
+
+- [NIPs](https://github.com/nostr-protocol/nips)
+- [Kind Registry](https://nostr-protocol.github.io/registry-of-kinds/)
+- [Documentation Registry](https://nostrbook.dev/)
+
+Check out [awesome-nostr](https://github.com/aljazceru/awesome-nostr) for links to other clients, libraries, relay implementations, and related projects to work on.
+
+[HelloNostrDocs](https://hellonostr.dev/en/) is a simple guide for getting started with nostr development.
+
+There is also [NostrDesign](https://nostrdesign.org/), a great resource for developers and UIX design for nostr.
+
+If you would like to donate to nostr development, have a look at various [nostr projects](https://geyser.fund/?search=nostr) or visit the [OpenSats Nostr Fund](https://opensats.org/funds/nostr).
+
+This site is open source too. If you can, please [improve this page](https://github.com/nostr-resources/nostr-resources-v2). You can also create a [translation](#translations).
+
+---
+
+## Translations
+
+- [Chinese translation](https://mp.weixin.qq.com/s/RoO-oOgGAXpcGyjD8IYBdw) by Cakksakkas
+- [French translation](https://nostr.fr) by Marco.BTC.fr
+- [Spanish translation](https://bitcoinnostr.com/recursos-de-nostr/) by BitByBit
+- [German translation](https://cercatrova.blog/nostr-info-de/) by cercatrova
+- [Italian translation](https://gist.github.com/theRescuer/717295270a35b4641081b6ef2cdf3025) by avallanosterza
+- [Brazilian Portuguese translation](https://gist.github.com/fernandoporazzi/d1c47b4f2a1d2c1a2e0654a2a31668ff) por fernandoporazzi
+
+Please [create a PR](https://github.com/nostr-resources/nostr-resources-v2/pulls) to add your translation to the list above.
+
+## About
+
+This project evolved out of [a
+gist](https://gist.github.com/dergigi/1ee8dc7e3da4b6572ed785ab24bc9907/revisions)
+that was quite hastily put together. Its purpose was to help people wrap their heads
+around nostr, and I guess this is the purpose still.
+
+Some of the text above is copied from
+[nostr-protocol/nostr](https://github.com/nostr-protocol/nostr) and
+[nostr.net](https://www.nostr.net/). I just left some stuff out, so consider
+the descriptions and explanations an opinionated summary.
+
+If you found a typo, please [fix it](https://github.com/nostr-resources/nostr-resources-v2/blob/main/content/en/_index.md).
+If you have suggestions, please [create an issue](https://github.com/nostr-resources/nostr-resources-v2/issues).
+If you want to scream at me because you think this whole thing is stupid, please [find me on nostr](https://npub.world/npub1dergggklka99wwrs92yz8wdjs952h2ux2ha2ed598ngwu9w7a6fsh9xzpc).
+
 ---
